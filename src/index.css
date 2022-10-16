@@ -1,20 +1,19 @@
 @import url('./theme.css');
 
-:root {
-  --color: red;
+*:where(:not(iframe, canvas, img, svg, video, h1, h2, h3, h4, h5, h6):not(svg
+      *)) {
+  all: unset;
+  display: revert;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--font-color-primary);
 }
 
 input {
   border: 1px solid black;
-}
-
-*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
-  all: unset;
-  display: revert;
 }

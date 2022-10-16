@@ -4,13 +4,17 @@ module.exports = {
     es2021: true,
   },
   parser: '@typescript-eslint/parser',
-  extends: ['standard-with-typescript', 'plugin:react/recommended'],
+  extends: [
+    'standard-with-typescript',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+  ],
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
+    project: ['./tsconfig.json'],
   },
-  plugins: ['react-hooks'],
   settings: {
     react: {
       version: 'detect',
@@ -24,7 +28,8 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/space-before-function-paren': 'off',
     'react/prop-types': 'off',
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/member-delimiter-style': 'semicolon',
   },
+  ignorePatterns: ['.eslintrc.cjs'],
 };

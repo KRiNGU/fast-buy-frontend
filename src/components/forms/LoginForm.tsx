@@ -6,6 +6,9 @@ import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import Button from '../Button';
 import Input from '../Input';
+import styled from 'styled-components';
+import FormErrorLabel from '../FormErrorLabel';
+import FormLabel from '../FormLabel';
 
 export type ILoginFormInputs = SignInDto;
 
@@ -19,6 +22,57 @@ const schema = yup
 interface ILoginForm {
   onSubmit: (data: ILoginFormInputs) => void;
 }
+
+const StyledLoginForm = styled.form`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+const StyledLoginButton = styled(Button)`
+  margin-top: 50px;
+  font-size: 16px;
+  transition: all 0.2s;
+  position: relative;
+  width: 100%;
+  &::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    transition: all 0.5s;
+    background-color: rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+  }
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 5px 20px 10px 0px rgba(141, 141, 141, 0.1);
+  }
+  &:hover::before {
+    opacity: 0;
+    transform: scale(1.7, 1.7);
+  }
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 2px 10px 10px 0px rgba(0, 0, 0, 0.2);
+  }
+`;
+
+const StyledLoginInput = styled(Input)`
+  margin-top: 5px;
+`;
+
+const StyledFormLabel = styled(FormLabel)`
+  &:not(:first-child) {
+    margin-top: 50px;
+  }
+`;
 
 const LoginForm = ({ onSubmit }: ILoginForm) => {
   const {
@@ -37,13 +91,17 @@ const LoginForm = ({ onSubmit }: ILoginForm) => {
   );
 
   return (
-    <form onSubmit={handleSubmit(handleSubmitForm)}>
-      <Input />
-      <label htmlFor="email">{errors.email?.message}</label>
-      <Input />
-      <label htmlFor="password">{errors.password?.message}</label>
-      <Button type="submit">Submit</Button>
-    </form>
+    <StyledLoginForm onSubmit={handleSubmit(handleSubmitForm)}>
+      <StyledFormLabel>Email:</StyledFormLabel>
+      <StyledLoginInput />
+      <FormErrorLabel htmlFor="email">{errors.email?.message}</FormErrorLabel>
+      <StyledFormLabel>Password:</StyledFormLabel>
+      <StyledLoginInput />
+      <FormErrorLabel htmlFor="password">
+        {errors.password?.message}
+      </FormErrorLabel>
+      <StyledLoginButton type="submit">Sign In</StyledLoginButton>
+    </StyledLoginForm>
   );
 };
 

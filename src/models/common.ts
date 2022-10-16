@@ -1,1 +1,3 @@
-export type Theme = 'light' | 'dark' | 'auto';
+export type Theme = ThemeClass | 'auto';
+
+export type ThemeClass = 'light' | 'dark';

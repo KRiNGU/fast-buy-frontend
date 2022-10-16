@@ -6,18 +6,22 @@ export type IButton = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children?: React.ReactNode;
 };
 const StyledButton = styled.button`
-  border: 1px solid #d3d4d8;
-  padding: 2px 7px;
+  color: var(--font-color-primary);
+  background-color: var(--color-primary);
+  padding: 10px 15px;
   border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
   cursor: pointer;
   &:hover {
-    border-color: #768ce6;
+    background-color: var(--color-primary_hover);
   }
   &:active {
-    border-color: #4863cf;
-    background-color: #4863cf;
-    color: #fff;
-    box-shadow: 0 0 2px 2px #4863cf2a;
+    background-color: var(--color-primary_active);
+    box-shadow: 0 0 2px 2px var(--color-primary_shadow);
+  }
+  &:focus-visible {
+    box-shadow: var(--focus-visible);
   }
 `;
 const Button = ({ children, ...buttonProps }: IButton) => {

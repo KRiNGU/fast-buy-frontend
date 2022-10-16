@@ -23,7 +23,6 @@ export const ThemeState = memo(({ children }: IThemeState) => {
   const toggleTheme = useCallback(
     (newTheme: Theme) => {
       if (newTheme !== theme) {
-        console.log(theme, newTheme);
         if (newTheme === 'auto') {
           localStorage.removeItem('theme');
           setTheme(newTheme);

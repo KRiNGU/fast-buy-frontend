@@ -1,7 +1,23 @@
 .light {
-  --color: red;
+  --background-login: url('./assets/white-snake.jpg');
+  --font-color-primary: #1f1f1f;
+  --color-grey: #d3d4d8;
+  --color-primary: #bd40d0;
+  --color-primary_hover: #a31db7;
+  --color-primary_active: #9416a8;
+  --focus-visible: 0 0 5px 5px var(--color-primary_shadow);
+  --color-primary_shadow: #9516a84a;
+  --container-color-primary: #e8e8e8;
 }
 
 .dark {
-  --color: green;
+  --color-grey: #d3d4d8;
+  --font-color-primary: #cbcbcb;
+  --color-primary: #5a1f63;
+  --color-primary_hover: #470f50;
+  --color-primary_active: #470751;
+  --color-primary_shadow: #4809524a;
+  --container-color-primary: #121212;
+  --focus-visible: 0 0 5px 5px var(--color-primary_shadow);
+  --background-login: url('./assets/snake.jpg');
 }
