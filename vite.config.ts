@@ -6,12 +6,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './srs'),
-      '@components': path.resolve(__dirname, './srs/components'),
-      '@assets': path.resolve(__dirname, './srs/assets'),
-      '@api': path.resolve(__dirname, './srs/api'),
-      '@pages': path.resolve(__dirname, './srs/pages'),
-      '@models': path.resolve(__dirname, './srs/models'),
+      '@': path.resolve(__dirname, './src'),
     },
   },
 });

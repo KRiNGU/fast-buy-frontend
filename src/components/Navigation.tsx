@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import App from '../App';
+import App from '@/App';
 import NotFoundPage from './NotFoundPage';
 
 const Navigation: React.FC = () => {
