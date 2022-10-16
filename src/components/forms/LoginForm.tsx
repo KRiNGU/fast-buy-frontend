@@ -4,6 +4,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
+import Button from '../Button';
+import Input from '../Input';
 
 export type ILoginFormInputs = SignInDto;
 
@@ -36,11 +38,11 @@ const LoginForm = ({ onSubmit }: ILoginForm) => {
 
   return (
     <form onSubmit={handleSubmit(handleSubmitForm)}>
-      <input {...register('email')} />
+      <Input />
       <label htmlFor="email">{errors.email?.message}</label>
-      <input {...register('password')} />
+      <Input />
       <label htmlFor="password">{errors.password?.message}</label>
-      <input type="submit" />
+      <Button type="submit">Submit</Button>
     </form>
   );
 };

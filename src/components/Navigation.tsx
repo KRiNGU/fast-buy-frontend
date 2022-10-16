@@ -1,12 +1,12 @@
 import { memo } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import App from '@/App';
 import NotFoundPage from './NotFoundPage';
+import Login from '@/pages/Login';
 
 const Navigation: React.FC = () => {
   return (
     <Routes>
-      <Route path="/" element={<App />} />
+      <Route path="/" element={<Login />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
