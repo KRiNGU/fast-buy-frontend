@@ -2,6 +2,7 @@ import { memo } from 'react';
 import styled from 'styled-components';
 
 export type IInput = React.InputHTMLAttributes<HTMLInputElement>;
+
 const StyledInput = styled.input`
   border: 1px solid var(--color-grey);
   color: var(--font-color-primary);
@@ -9,13 +10,14 @@ const StyledInput = styled.input`
   padding: 10px 15px;
   border-radius: 5px;
   &:hover {
-    border-color: var(--color-primary);
+    border-color: var(--color-primary_hover);
   }
   &:focus {
     border-color: var(--color-primary_active);
     box-shadow: 0 0 3px 3px var(--color-primary_shadow);
   }
 `;
+
 const Input = ({ ...inputProps }: IInput) => {
   return <StyledInput {...inputProps} />;
 };

@@ -6,7 +6,7 @@ export type IButton = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children?: React.ReactNode;
 };
 const StyledButton = styled.button`
-  color: var(--font-color-primary);
+  color: #eeeeee;
   background-color: var(--color-primary);
   padding: 10px 15px;
   border-radius: 5px;

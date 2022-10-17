@@ -47,12 +47,12 @@ const StyledLoginButton = styled(Button)`
     height: 100%;
     border-radius: inherit;
     transition: all 0.5s;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--font-color-primary_low-shadow);
     pointer-events: none;
   }
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 5px 20px 10px 0px rgba(141, 141, 141, 0.1);
+    box-shadow: 5px 20px 10px 0px var(--font-color-primary_shadow);
   }
   &:hover::before {
     opacity: 0;
@@ -60,7 +60,7 @@ const StyledLoginButton = styled(Button)`
   }
   &:active {
     transform: translateY(-1px);
-    box-shadow: 2px 10px 10px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 10px 5px 0px var(--font-color-primary_shadow);
   }
 `;
 
