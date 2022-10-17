@@ -1,7 +1,6 @@
 import { memo, useCallback } from 'react';
 import { SignInDto } from '@/models/auth';
 import { yupResolver } from '@hookform/resolvers/yup';
-
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import Button from '../Button';
@@ -87,16 +86,16 @@ const LoginForm = ({ onSubmit }: ILoginForm) => {
     (data: ILoginFormInputs) => {
       onSubmit(data);
     },
-    [errors]
+    [onSubmit]
   );
 
   return (
     <StyledLoginForm onSubmit={handleSubmit(handleSubmitForm)}>
       <StyledFormLabel>Email:</StyledFormLabel>
-      <StyledLoginInput />
+      <StyledLoginInput {...register('email')} />
       <FormErrorLabel htmlFor="email">{errors.email?.message}</FormErrorLabel>
       <StyledFormLabel>Password:</StyledFormLabel>
-      <StyledLoginInput />
+      <StyledLoginInput {...register('password')} />
       <FormErrorLabel htmlFor="password">
         {errors.password?.message}
       </FormErrorLabel>

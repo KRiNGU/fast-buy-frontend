@@ -6,11 +6,11 @@ import { ThemeState } from './contexts/ThemeContext';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <StrictMode>
-    <ThemeState>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </ThemeState>
-  </StrictMode>
+	<StrictMode>
+		<ThemeState>
+			<BrowserRouter>
+				<App />
+			</BrowserRouter>
+		</ThemeState>
+	</StrictMode>
 );
